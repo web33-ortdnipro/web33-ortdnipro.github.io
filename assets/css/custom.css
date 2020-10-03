@@ -1,0 +1,70 @@
+.scale-icon{
+    transform: scale(2);    
+}
+
+.scale-icon-more {
+    transform: scale(2.33);    
+}
+
+.copyright {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.footer-section{
+    background: none;
+}
+
+.total-quantity-label {
+    font-size: 0.6em;
+    color: #bbb;
+}
+
+.resume-list p {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.3em;
+}
+
+.linkbox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.linkbox > a, .linkbox > i {
+    margin: auto 15px;
+    cursor: pointer;
+}
+
+input {
+    display: block;
+    font-size: 20px;
+    min-width: 420px;    
+}
+
+@media (max-width:576px){
+    .resume-list h2, .section-title h2 {
+        font-size: 32px;
+    } 
+
+    .site-logo h2 {
+        font-size: 24px;
+    } 
+
+    .social-section{
+        padding-top: 36px;
+        padding-bottom: 26px;
+    }
+
+    .spad {
+        padding-top: 65px;
+    }
+
+    input {
+      
+        margin: 20px;
+        font-size: 12px;
+        min-width: 290px;    
+    }
+}
