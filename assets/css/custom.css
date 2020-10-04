@@ -45,7 +45,7 @@ input {
 
 #search-text {
     font-weight: 600;
-    min-width: 240px;
+    min-width: 220px;
 }
 
 .search-block {
@@ -55,7 +55,7 @@ input {
 
 @media (max-width:576px){
     .resume-list h2, .section-title h2 {
-        font-size: 32px;
+        font-size: 28px;
     } 
 
     .site-logo h2 {
