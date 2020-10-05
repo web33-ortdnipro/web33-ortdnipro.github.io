@@ -3,19 +3,20 @@
 <head>
 	<title>WEB33@ORTDNIPRO</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="WEB33@ORTDNIPRO">
-	<meta name="keywords" content="Учебные материалы для группы WEB33 образовательного центра ORT DNIPRO">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->   
-	<link href="./assets/img/favicon.png" rel="shortcut icon"/>
 
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Roboto+Slab&display=swap" rel="stylesheet">
+	<meta name="description" content="Учебные материалы для группы WEB33 образовательного центра ORT DNIPRO">
+
+	<meta property="og:site_name" content="ORT DNIPRO | Международный образовательный центр"/>
+	<meta property="og:description" content="Учебные материалы для группы WEB33 образовательного центра ORT DNIPRO" />
+	<meta property="og:url" content="https://web33.ortdnipro.org/" />
+	<meta property="og:image" content="https://web33.ortdnipro.org/assets/img/logo-glow.png" />
+	<meta name="twitter:card" content="summary_large_image"/>
 
 	
-
-
-
+	<!-- Favicon -->   
+	<link href="./assets/img/favicon.png" rel="shortcut icon"/>
+	
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="./assets/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="./assets/css/font-awesome.min.css"/>
@@ -24,14 +25,6 @@
 	<link rel="stylesheet" href="./assets/css/magnific-popup.css"/>
 	<link rel="stylesheet" href="./assets/css/style.css"/>
 	<link rel="stylesheet" href="./assets/css/custom.css"/>
-
-
-	<meta property="og:site_name" content="ORT DNIPRO | Международный образовательный центр"/>
-	<meta property="og:title" content="WEB33@ORTDNIPRO" />
-	<meta property="og:description" content="Учебные материалы для группы WEB33 образовательного центра ORT DNIPRO" />
-	<meta property="og:url" content="https://web33.ortdnipro.org/" />
-	<meta property="og:image" content="https://web33.ortdnipro.org/assets/img/logo-glow.png" />
-	<meta name="twitter:card" content="summary_large_image"/>
 
 </head>
 <body id='app-container'>
@@ -46,7 +39,7 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="site-logo">
-						<h2>WEB33@ORTDNIPRO</h2>
+						<h2>{{groupFullTitle}}</h2>
 						<p>Курс 
 							<a target='_blank' href='https://ort.dp.ua/web/'>
 							Начало веб-разработки и программирования</a>
@@ -87,7 +80,7 @@
 			<div class="row">
 				<div class="col-xl-8 offset-xl-2">
 					<div class="section-title">
-						<h2 class='mb-4'>WEB33 Lessons List:</h2>
+						<h2 class='mb-4'>{{groupTitle}} Lessons List:</h2>
 						<div class='d-flex align-items-center search-block'>
 							<i class="fa fa-search fa-2x" aria-hidden="true" style='color:#bbb;'></i>
 							&nbsp;
