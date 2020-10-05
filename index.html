@@ -24,7 +24,7 @@
 	<link rel="stylesheet" href="./assets/css/owl.carousel.css"/>
 	<link rel="stylesheet" href="./assets/css/magnific-popup.css"/>
 	<link rel="stylesheet" href="./assets/css/style.css"/>
-	<link rel="stylesheet" href="./assets/css/custom.css"/>
+	<link rel="stylesheet" href="./assets/css/custom.css?version=1"/>
 
 </head>
 <body id='app-container'>
@@ -80,12 +80,16 @@
 			<div class="row">
 				<div class="col-xl-8 offset-xl-2">
 					<div class="section-title">
-						<h2 class='mb-4'>{{groupTitle}} Lessons List:</h2>
-						<div class='d-flex align-items-center search-block'>
-							<i class="fa fa-search fa-2x" aria-hidden="true" style='color:#bbb;'></i>
+						<h2 class='mb-5'>{{groupTitle}} Lessons List:</h2>
+						<div class='d-flex align-items-center search-block my-4'>
+							<i class="fa fa-search fa-2x text-muted"></i>
 							&nbsp;
 							<input placeholder="Search..." v-model='searchText' id='search-text'>
+							
 						</div>
+						<h3 class='founded-stat text-muted my-4'>&nbsp;
+							<span v-if='searchText.trim().length'>Найдено {{searchResult.length}} из {{repositoriesList.length}}</span>
+						</h3>
 					</div>
 					<ul class="resume-list">
 						<li v-for='item in searchResult'>
@@ -151,8 +155,7 @@
 	<script src="./assets/js/magnific-popup.min.js"></script>
 	<script src="./assets/js/circle-progress.min.js"></script>
 	<script src="./assets/js/main.js"></script>
-	<!--<script src="https://unpkg.com/vue@next"></script>-->
 	<script src="./assets/js/vue.global.prod.js"></script>
-	<script src="./assets/js/code.js"></script>
+	<script src="./assets/js/code.js?version=1"></script>
 </body>
 </html>

@@ -88,8 +88,11 @@ input {
 }
 
 .search-block {
-    margin-bottom: 80px; 
     margin-left:auto;
+}
+
+.section-title {
+    margin-bottom: 70px;
 }
 
 @media (max-width:576px){
