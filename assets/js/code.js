@@ -42,7 +42,8 @@
                 groupFullTitle: 'WEB33@ORTDNIPRO',
                 totalLessonQuantity: 24,
                 showPPTX: false, 
-                searchText: ''
+                searchText: '',
+                showGitHubLinkAfter: 10
             }
         },
 
