@@ -12,12 +12,13 @@
 		data-show-git-hub-link-after='10'
 		data-show-certificates-data-button='false'
 		data-certificates-data-link='#'
-		data-show-course-review-button='false',
-		data-show-course-review-after='2020-11-26T19:55:00Z',
-		data-course-review-link='https://bit.ly/2FnP3qQ',
-		data-git-hub-account='web33-ortdnipro',
-		data-git-hub-token='Y2FkOWNmYTBhNDBkYzcwNzU4NThkNTM1ZDVjNGNkMjcyMmJhNDI0Yg==',
+		data-show-course-review-button='false'
+		data-show-course-review-after='2020-11-26T19:55:00Z'
+		data-course-review-link='https://bit.ly/2FnP3qQ'
+		data-git-hub-account='web33-ortdnipro'
+		data-git-hub-token='Y2FkOWNmYTBhNDBkYzcwNzU4NThkNTM1ZDVjNGNkMjcyMmJhNDI0Yg=='
 		data-telegram-group-link='https://t.me/joinchat/GWql0lfISZWKsJXR74TDtQ'
+		data-course-link-on-main-site='https://ortdnipro.org/web/'
 	>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,7 +63,7 @@
 					<div class="site-logo">
 						<h2>{{groupFullTitle}}</h2>
 						<p>Курс 
-							<a target='_blank' href='https://ortdnipro.org/web/'>
+							<a target='_blank' :href='courseLinkOnMainSite'>
 							Начало веб-разработки и программирования</a>
 						</p>
 					</div>
@@ -164,7 +165,7 @@
 	<footer class="footer-section">
 		<div class="container text-center">
 			<div class="copyright">
-				<a target="_blank" href='https://ort.dp.ua/web/'>
+				<a target="_blank" :href='courseLinkOnMainSite'>
 					<u>ORT DNIPRO</u>
 				</a> 
 				<span @click='showPPTX = !showPPTX'>

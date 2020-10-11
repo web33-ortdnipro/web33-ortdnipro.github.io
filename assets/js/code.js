@@ -63,6 +63,8 @@
 
                 telegramGroupLink: appDataTag.dataset.telegramGroupLink,
 
+                courseLinkOnMainSite: appDataTag.dataset.courseLinkOnMainSite,
+
                 showPPTX: false, 
                 searchText: ''
             }
