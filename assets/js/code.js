@@ -1,14 +1,13 @@
-    const GITHUB_USER 	= "web33-ortdnipro";
-    const GITHUB_TOKEN 	= atob("Y2FkOWNmYTBhNDBkYzcwNzU4NThkNTM1ZDVjNGNkMjcyMmJhNDI0Yg==");
-
-    const REPS_URL = `https://api.github.com/users/${GITHUB_USER}/repos`;
-        
     const appOptions = {
 
         methods: {
             copyToClipboard(event) {
                 event.target.previousElementSibling.select();
                 document.execCommand("copy"); 
+            },
+
+            getCurrentISOTimeString(){
+                return (new Date(Date.now() - ((new Date()).getTimezoneOffset() * 60000))).toISOString().slice(0, -1);
             }
         },
 
@@ -32,27 +31,56 @@
 
             isNothingFound() {
                 return !this.searchResult.length;
+            },
+
+            isShowCourseReviewButton(){
+                return this.showCourseReviewButton && this.showCourseReviewAfter < this.currentISOTimeString
             }
         },
 
         data() {
+            let titleTag = document.querySelector('title');
+            let appDataTag = document.querySelector('title + meta');
+            
             return {
                 repositoriesList: [],
-                groupTitle: 'WEB33',
-                groupFullTitle: 'WEB33@ORTDNIPRO',
-                totalLessonQuantity: 24,
+                groupTitle: titleTag.innerHTML.split('@')[0],
+                groupFullTitle: titleTag.innerHTML,
+                totalLessonQuantity: appDataTag.dataset.totalLessonQuantity,
+                showGitHubLinkAfter: appDataTag.dataset.showGitHubLinkAfter,
+
+                showCertificatesDataButton: appDataTag.dataset.showCertificatesDataButton.includes('true'),
+                certificatesDataLink: appDataTag.dataset.certificatesDataLink,
+
+                showCourseReviewButton: appDataTag.dataset.showCourseReviewButton.includes('true'),
+                courseReviewLink: appDataTag.dataset.courseReviewLink,
+                showCourseReviewAfter: appDataTag.dataset.showCourseReviewAfter,
+
+                gitHubAccount: appDataTag.dataset.gitHubAccount,
+                gitHubToken: atob(appDataTag.dataset.gitHubToken),
+
+                currentISOTimeString: this.getCurrentISOTimeString(),
+
                 showPPTX: false, 
-                searchText: '',
-                showGitHubLinkAfter: 10
+                searchText: ''
             }
         },
 
         async mounted() {
+
+            const REPS_URL = `https://api.github.com/users/${this.gitHubAccount}/repos`;
+
             let answer = await fetch(REPS_URL, {
                 headers:{
-                    "Authorization": `token ${GITHUB_TOKEN}`
+                    "Authorization": `token ${this.gitHubToken}`
                 }
             }); 
+
+            if(this.showCourseReviewButton){
+                setInterval(() => {
+                    this.currentISOTimeString = this.getCurrentISOTimeString();
+                }, 10000);
+            }
             
             answer = await answer.json();
 
@@ -72,10 +100,4 @@
 
     }
 
-   Vue.createApp(appOptions).mount('#app-container');
-
-
-    
-
-        
-        
+   Vue.createApp(appOptions).mount('#app-container');   

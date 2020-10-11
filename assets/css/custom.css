@@ -37,14 +37,6 @@
 }
 
 
-.scale-icon{
-    transform: scale(2);    
-}
-
-.scale-icon-more {
-    transform: scale(2.33);    
-}
-
 .copyright {
     font-size: 18px;
     font-weight: 600;

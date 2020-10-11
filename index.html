@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>WEB33@ORTDNIPRO</title>
 	<meta charset="UTF-8">
+	
+	<!-- Start Configuration Data -->
+
+	<title>WEB33@ORTDNIPRO</title>
+
+	<meta 
+		data-total-lesson-quantity='24'
+		data-show-git-hub-link-after='10'
+		data-show-certificates-data-button='false'
+		data-certificates-data-link='#'
+		data-show-course-review-button='false',
+		data-show-course-review-after='2020-11-26T19:55:00Z',
+		data-course-review-link='https://bit.ly/2FnP3qQ',
+		data-git-hub-account='web33-ortdnipro',
+		data-git-hub-token='Y2FkOWNmYTBhNDBkYzcwNzU4NThkNTM1ZDVjNGNkMjcyMmJhNDI0Yg=='
+	>
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<meta name="description" content="Учебные материалы для группы WEB33 образовательного центра ORT DNIPRO">
 
-	<meta property="og:site_name" content="ORT DNIPRO | Международный образовательный центр"/>
 	<meta property="og:description" content="Учебные материалы для группы WEB33 образовательного центра ORT DNIPRO" />
-	<meta property="og:url" content="https://web33.ortdnipro.org/" />
-	<meta property="og:image" content="https://web33.ortdnipro.org/assets/img/logo-glow.png" />
-	<meta name="twitter:card" content="summary_large_image"/>
 
+	<meta property="og:site_name" content="ORT DNIPRO | Международный образовательный центр"/>
+		
+	<meta property="og:url" content="https://web33.ortdnipro.org/" />
+	
+	<!-- End Configuration Data -->
+
+	<meta property="og:image" content="https://ortdnipro.org/media/web-preview-image.png" />
+	<meta name="twitter:card" content="summary_large_image"/>
 	
 	<!-- Favicon -->   
 	<link href="./assets/img/favicon.png" rel="shortcut icon"/>
 	
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="./assets/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="./assets/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="./assets/css/fa5.css"/>
 	<link rel="stylesheet" href="./assets/css/flaticon.css"/>
 	<link rel="stylesheet" href="./assets/css/owl.carousel.css"/>
 	<link rel="stylesheet" href="./assets/css/magnific-popup.css"/>
@@ -37,7 +57,7 @@
 	<header class="header-section">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-lg-4">
 					<div class="site-logo">
 						<h2>{{groupFullTitle}}</h2>
 						<p>Курс 
@@ -45,6 +65,16 @@
 							Начало веб-разработки и программирования</a>
 						</p>
 					</div>
+				</div>
+				<div class="col-lg-8 text-lg-right header-buttons">
+					<a v-if='showCertificatesDataButton' :href="certificatesDataLink" class="site-btn d-inline-flex align-items-center">
+						<i class="fas fa-2x fa-graduation-cap"></i>
+						&nbsp;Анкета для Сертификатов
+					</a>
+					<a v-if='isShowCourseReviewButton' :href="courseReviewLink" class="site-btn bg-primary text-white d-inline-flex align-items-center">
+						<i class="fas fa-2x fa-balance-scale"></i>
+						&nbsp;Ваше мнение о курсе
+					</a>
 				</div>
 				
 			</div>
@@ -60,10 +90,10 @@
 					<div class="social-link-warp">
 						<div class="social-links">
 							<a target='_blank' class='mx-5' href="https://t.me/joinchat/GWql0lfISZWKsJXR74TDtQ">
-								<i class="scale-icon fa fa-telegram"></i>
+								<i class="scale-icon fa-2x fab fa-telegram"></i>
 							</a>
 							<a target='_blank' class='mx-5' href="https://github.com/web33-ortdnipro">
-								<i class="scale-icon scale-icon-more fa fa-github"></i>
+								<i class="scale-icon fa-2x fab fa-github"></i>
 							</a>
 						</div>
 						<h2 class="hidden-md hidden-sm">Telegram / GitHub</h2>
@@ -82,7 +112,7 @@
 					<div class="section-title">
 						<h2 class='mb-5'>{{groupTitle}} Lessons List:</h2>
 						<div class='d-flex align-items-center search-block my-4'>
-							<i class="fa fa-search fa-2x text-muted"></i>
+							<i class="fas fa-search fa-2x text-muted"></i>
 							&nbsp;
 							<input placeholder="Search..." v-model='searchText' id='search-text'>
 							
@@ -101,22 +131,21 @@
 							<div class='linkbox my-3'>
 								<input v-if='item.lessonNumber >= showGitHubLinkAfter' style='min-width: 250px;' class='ml-2' type='text' readonly :value='item.url'>
 								
-								<i v-if='item.lessonNumber >= showGitHubLinkAfter'  title="Copy To Clipboard" @click='copyToClipboard' class="fa fa-clipboard fa-3x"></i>
+								<i v-if='item.lessonNumber >= showGitHubLinkAfter'  title="Copy To Clipboard" @click='copyToClipboard' class="fas fa-paste fa-3x"></i>
 
 								<a v-if='item.lessonNumber >= showGitHubLinkAfter'  target='_blank' :href='item.url' style='color:black'>
-									<i title="Open On GitHub"  class="fa fa-3x fa-github-square" ></i>
+									<i title="Open On GitHub"  class="fa-3x fas fa-code-branch"></i>
 								</a>
 
 								<a target='_blank' :href='item.pdfLink' style='color:black'>
-									<i title="Download PDF From GitHub" class="fa fa-file-pdf-o fa-3x"></i>
+									<i title="Download PDF From GitHub" class="far fa-file-pdf fa-3x"></i>
 								</a>
 							
 								<a target='_blank' v-if='showPPTX' :href='item.pptxLink' style='color:black'>
-									<i title="Download PPTX From GitHub" class="fa fa-file-powerpoint-o fa-3x"></i>
+									<i title="Download PPTX From GitHub" class="far fa-file-powerpoint fa-3x"></i>
 								</a>
 							</div>
-							
-							
+								
 						</li>
 						<li v-if='isNothingFound' class='mb-5'>
 							<h3 class='mb-5 text-muted' class=''>Ничего не найдено...</h3>
