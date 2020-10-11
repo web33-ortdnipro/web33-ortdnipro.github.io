@@ -61,6 +61,8 @@
 
                 currentISOTimeString: this.getCurrentISOTimeString(),
 
+                telegramGroupLink: appDataTag.dataset.telegramGroupLink,
+
                 showPPTX: false, 
                 searchText: ''
             }

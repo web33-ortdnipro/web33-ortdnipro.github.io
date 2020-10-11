@@ -16,7 +16,8 @@
 		data-show-course-review-after='2020-11-26T19:55:00Z',
 		data-course-review-link='https://bit.ly/2FnP3qQ',
 		data-git-hub-account='web33-ortdnipro',
-		data-git-hub-token='Y2FkOWNmYTBhNDBkYzcwNzU4NThkNTM1ZDVjNGNkMjcyMmJhNDI0Yg=='
+		data-git-hub-token='Y2FkOWNmYTBhNDBkYzcwNzU4NThkNTM1ZDVjNGNkMjcyMmJhNDI0Yg==',
+		data-telegram-group-link='https://t.me/joinchat/GWql0lfISZWKsJXR74TDtQ'
 	>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +45,7 @@
 	<link rel="stylesheet" href="./assets/css/owl.carousel.css"/>
 	<link rel="stylesheet" href="./assets/css/magnific-popup.css"/>
 	<link rel="stylesheet" href="./assets/css/style.css"/>
-	<link rel="stylesheet" href="./assets/css/custom.css?version=1"/>
+	<link rel="stylesheet" href="./assets/css/custom.css?version=2"/>
 
 </head>
 <body id='app-container'>
@@ -61,7 +62,7 @@
 					<div class="site-logo">
 						<h2>{{groupFullTitle}}</h2>
 						<p>Курс 
-							<a target='_blank' href='https://ort.dp.ua/web/'>
+							<a target='_blank' href='https://ortdnipro.org/web/'>
 							Начало веб-разработки и программирования</a>
 						</p>
 					</div>
@@ -89,10 +90,10 @@
 				<div class="col-xl-10 offset-xl-1">
 					<div class="social-link-warp">
 						<div class="social-links">
-							<a target='_blank' class='mx-5' href="https://t.me/joinchat/GWql0lfISZWKsJXR74TDtQ">
+							<a target='_blank' class='mx-5' :href="telegramGroupLink">
 								<i class="scale-icon fa-2x fab fa-telegram"></i>
 							</a>
-							<a target='_blank' class='mx-5' href="https://github.com/web33-ortdnipro">
+							<a target='_blank' class='mx-5' :href="`https://github.com/${gitHubAccount}`">
 								<i class="scale-icon fa-2x fab fa-github"></i>
 							</a>
 						</div>
