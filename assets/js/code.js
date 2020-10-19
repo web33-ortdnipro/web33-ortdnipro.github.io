@@ -42,32 +42,26 @@
             let titleTag = document.querySelector('title');
             let appDataTag = document.querySelector('title + meta');
             
-            return {
+            console.dir( appDataTag.dataset);
+
+            let dataConfig = {
+
                 repositoriesList: [],
                 groupTitle: titleTag.innerHTML.split('@')[0],
                 groupFullTitle: titleTag.innerHTML,
-                totalLessonQuantity: appDataTag.dataset.totalLessonQuantity,
-                showGitHubLinkAfter: appDataTag.dataset.showGitHubLinkAfter,
+                
+                ...appDataTag.dataset,
 
                 showCertificatesDataButton: appDataTag.dataset.showCertificatesDataButton.includes('true'),
-                certificatesDataLink: appDataTag.dataset.certificatesDataLink,
-
                 showCourseReviewButton: appDataTag.dataset.showCourseReviewButton.includes('true'),
-                courseReviewLink: appDataTag.dataset.courseReviewLink,
-                showCourseReviewAfter: appDataTag.dataset.showCourseReviewAfter,
-
-                gitHubAccount: appDataTag.dataset.gitHubAccount,
                 gitHubToken: atob(appDataTag.dataset.gitHubToken),
-
                 currentISOTimeString: this.getCurrentISOTimeString(),
-
-                telegramGroupLink: appDataTag.dataset.telegramGroupLink,
-
-                courseLinkOnMainSite: appDataTag.dataset.courseLinkOnMainSite,
-
                 showPPTX: false, 
                 searchText: ''
+                
             }
+
+            return dataConfig;
         },
 
         async mounted() {
