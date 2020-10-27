@@ -49,16 +49,16 @@
                 repositoriesList: [],
                 groupTitle: titleTag.innerHTML.split('@')[0],
                 groupFullTitle: titleTag.innerHTML,
+                currentISOTimeString: this.getCurrentISOTimeString(),
+                showPPTX: false, 
+                searchText: '',
                 
                 ...appDataTag.dataset,
 
                 showCertificatesDataButton: appDataTag.dataset.showCertificatesDataButton.includes('true'),
                 showCourseReviewButton: appDataTag.dataset.showCourseReviewButton.includes('true'),
-                gitHubToken: atob(appDataTag.dataset.gitHubToken),
-                currentISOTimeString: this.getCurrentISOTimeString(),
-                showPPTX: false, 
-                searchText: ''
-                
+                gitHubToken: atob(appDataTag.dataset.gitHubToken)
+                            
             }
 
             return dataConfig;
