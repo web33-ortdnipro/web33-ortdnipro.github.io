@@ -200,6 +200,11 @@
 	<script src="./assets/js/circle-progress.min.js"></script>
 	<script src="./assets/js/main.js"></script>
 	<script src="./assets/js/vue.global.prod.js"></script>
-	<script src="./assets/js/code.js?version=7"></script>
+	<script>
+		let scriptTag = document.createElement('script');
+		scriptTag.src = './assets/js/code.js?v=' + Math.random();
+		document.body.appendChild(scriptTag);
+	</script>
+	
 </body>
 </html>
