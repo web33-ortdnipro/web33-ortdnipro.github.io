@@ -20,7 +20,9 @@
 		data-course-review-link='https://bit.ly/2FnP3qQ'
 		data-git-hub-account='web33-ortdnipro'
 		data-git-hub-token='Y2FkOWNmYTBhNDBkYzcwNzU4NThkNTM1ZDVjNGNkMjcyMmJhNDI0Yg=='
-		data-telegram-group-link='https://t.me/joinchat/GWql0lfISZWKsJXR74TDtQ'
+		data-show-telegram-link='false'
+		data-show-git-hub-link='true'
+		data-telegram-group-link='#'
 		data-course-link-on-main-site='https://ortdnipro.org/web/'
 		data-original-course-title='Начало веб-разработки и программирования'
 	>
@@ -93,14 +95,17 @@
 				<div class="col-xl-10 offset-xl-1">
 					<div class="social-link-warp">
 						<div class="social-links">
-							<a target='_blank' class='mx-5' :href="telegramGroupLink">
+							<a v-if='showTelegramLink' target='_blank' class='mx-5' :href="telegramGroupLink">
 								<i class="scale-icon fa-2x fab fa-telegram"></i>
 							</a>
-							<a target='_blank' class='mx-5' :href="`https://github.com/${gitHubAccount}`">
+							<a  v-if='showGitHubLink' target='_blank' class='mx-5' :href="`https://github.com/${gitHubAccount}`">
 								<i class="scale-icon fa-2x fab fa-github"></i>
 							</a>
 						</div>
-						<h2 class="hidden-md hidden-sm">Telegram / GitHub</h2>
+						<h2 class="hidden-md hidden-sm text-left">
+							<span v-if='showTelegramLink'>Telegram</span>  
+							<span v-if='showTelegramLink && showGitHubLink'> / </span> 
+							<span v-if='showGitHubLink'>GitHub</span></h2>
 					</div>
 				</div>
 			</div>
@@ -195,6 +200,6 @@
 	<script src="./assets/js/circle-progress.min.js"></script>
 	<script src="./assets/js/main.js"></script>
 	<script src="./assets/js/vue.global.prod.js"></script>
-	<script src="./assets/js/code.js?version=4"></script>
+	<script src="./assets/js/code.js?version=7"></script>
 </body>
 </html>

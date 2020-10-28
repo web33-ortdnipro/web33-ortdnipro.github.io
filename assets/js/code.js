@@ -54,11 +54,15 @@
                 searchText: '',
                 
                 ...appDataTag.dataset,
+                gitHubToken: atob(appDataTag.dataset.gitHubToken)          
+            }
 
-                showCertificatesDataButton: appDataTag.dataset.showCertificatesDataButton.includes('true'),
-                showCourseReviewButton: appDataTag.dataset.showCourseReviewButton.includes('true'),
-                gitHubToken: atob(appDataTag.dataset.gitHubToken)
-                            
+            for(let item in dataConfig){
+                dataConfig[item] = String(dataConfig[item]).trim().toLowerCase() === 'true' 
+                                    ?   true 
+                                    :   String(dataConfig[item]).trim().toLowerCase() === 'false' 
+                                            ? false
+                                            : dataConfig[item];
             }
 
             return dataConfig;
