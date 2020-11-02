@@ -13,8 +13,8 @@
 		data-course-active='true'
 		data-total-lesson-quantity='24'
 		data-show-git-hub-link-after='10'
-		data-show-certificates-data-button='false'
-		data-certificates-data-link='#'
+		data-show-certificates-data-button='true'
+		data-certificates-data-link='https://forms.gle/UhpcMZemdhWhjyuM9'
 		data-show-course-review-button='false'
 		data-show-course-review-after='2020-11-26T19:55:00Z'
 		data-course-review-link='https://bit.ly/2FnP3qQ'
@@ -73,11 +73,11 @@
 					</div>
 				</div>
 				<div class="col-lg-6 text-lg-right header-buttons">
-					<a v-if='showCertificatesDataButton' :href="certificatesDataLink" class="site-btn d-inline-flex align-items-center">
+					<a v-if='showCertificatesDataButton' :href="certificatesDataLink" class="site-btn d-inline-flex align-items-center" target='_blank'>
 						<i class="fas fa-2x fa-graduation-cap"></i>
 						&nbsp;Анкета для Сертификатов
 					</a>
-					<a v-if='isShowCourseReviewButton' :href="courseReviewLink" class="site-btn bg-primary text-white d-inline-flex align-items-center">
+					<a v-if='isShowCourseReviewButton' :href="courseReviewLink" class="site-btn bg-primary text-white d-inline-flex align-items-center" target='_blank'>
 						<i class="fas fa-2x fa-balance-scale"></i>
 						&nbsp;Ваше мнение о курсе
 					</a>
